@@ -18,7 +18,19 @@ docker-compose run app bash -c 'mv myapp/* myapp/.[^\.]* .; rm -rf myapp'
 docker-compose up
 ```
 
+# dbをsqliteにする
+
+.envを編集する
+```
+DB_CONNECTION=sqlite
+# DB_HOST=127.0.0.1
+# DB_PORT=3306
+# DB_DATABASE=homestead
+# DB_USERNAME=homestead
+# DB_PASSWORD=secret
+```
+
 # マイグレーション
 ```sh
-docker-compose exec app 
+docker-compose exec app php artisan migrate
 ```
