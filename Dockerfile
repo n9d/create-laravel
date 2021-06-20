@@ -8,8 +8,6 @@ RUN apt-get update && apt-get install -y unzip libzip-dev zlib1g-dev
 
 #RUN apt-get update && apt-get install -y lv w3m vim ncat net-tools
 
-#COPY ./apache2.conf /etc/apache2/apache2.conf
-
 COPY ./php.ini /usr/local/etc/php/php.ini
 
-WORKDIR /var/www/myapp
+WORKDIR /src
