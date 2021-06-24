@@ -4,12 +4,13 @@ services:
     build: 
       context: ./
       dockerfile: Dockerfile
-      target: development
+      target: production
     ports:
-      - '8080:8000'
       - '9000:9000'
-    volumes:
-      - .:/src
     working_dir: /src
-    command: /src/start.sh
+    #command: /src/start.sh
     tty: true
+  nginx:
+    build: ./nginx
+    ports: 
+      - '8080:80'

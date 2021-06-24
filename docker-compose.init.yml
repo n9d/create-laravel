@@ -4,12 +4,9 @@ services:
     build: 
       context: ./
       dockerfile: Dockerfile
-      target: development
+      target: initial
     ports:
       - '8080:8000'
-      - '9000:9000'
     volumes:
       - .:/src
-    working_dir: /src
-    command: /src/start.sh
     tty: true
